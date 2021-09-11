@@ -1,0 +1,70 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build active file", //  with dependencies
+			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${fileWorkspaceFolder}\\compiled\\*.o",
+				
+				"${fileWorkspaceFolder}\\dependencies\\glfw\\lib-mingw-w64\\libglfw3.a",
+				// "-lopengl32",
+				"-lgdi32",
+
+				"-I${fileWorkspaceFolder}\\dependencies\\glad\\include",
+				"-I${fileWorkspaceFolder}\\dependencies\\glfw\\include"
+			],
+			"options": {
+				"cwd": "${fileWorkspaceFolder}"
+			},
+			"problemMatcher": [ "$gcc" ],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: \"C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe\""
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe compile active file into \\compiled",
+			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"-c",
+				"${file}",
+				"-I${fileWorkspaceFolder}\\dependencies\\glad\\include",
+				"-I${fileWorkspaceFolder}\\dependencies\\glfw\\include"
+			],
+			"options": {
+				"cwd": "${fileWorkspaceFolder}\\compiled"
+			},
+			"problemMatcher": [ "$gcc" ],
+			"group": "build",
+			"detail": "compiler: \"C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe\""
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe compile all of Igsi into \\compiled",
+			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"-c",
+				"${fileWorkspaceFolder}\\dependencies\\igsi\\core\\*.cpp",
+				"${fileWorkspaceFolder}\\dependencies\\igsi\\extra\\*.cpp",
+				"-I${fileWorkspaceFolder}\\dependencies\\glad\\include",
+				"-I${fileWorkspaceFolder}\\dependencies\\glfw\\include"
+			],
+			"options": {
+				"cwd": "${fileWorkspaceFolder}\\compiled"
+			},
+			"problemMatcher": [ "$gcc" ],
+			"group": "build",
+			"detail": "compiler: \"C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe\""
+		}
+	]
+}
